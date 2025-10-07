@@ -37,8 +37,8 @@ If any of these actions fail, fix the issue before merging.
 - Seven-bag randomizer with hold, next queue, and ghost piece support
 - Keyboard controls for rotation, movement, soft drop, hard drop, and
   pause/reset actions
-- Score, line, and level tracking with increasing fall speed as you
-  progress
+- Score, line, and level tracking with level-based line-clear bonuses as
+  you progress
 - Ambient background soundtrack, responsive layout scaling, and flashing
   line-clear celebrations when you score
 

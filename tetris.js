@@ -61,7 +61,7 @@ const COLORS = {
   ghost: "rgba(226, 232, 240, 0.25)",
 };
 
-const SCORING = [0, 40, 100, 300, 1200];
+const LINE_SCORES = [0, 100, 300, 500, 800];
 
 const boardCanvas = document.getElementById("board");
 const boardCtx = boardCanvas.getContext("2d");
@@ -237,7 +237,8 @@ function startLineClear(rows) {
   lineClearFlashVisible = true;
   const cleared = rows.length;
   linesCleared += cleared;
-  const gained = SCORING[cleared] * (level + 1);
+  const scoreIndex = Math.min(cleared, LINE_SCORES.length - 1);
+  const gained = LINE_SCORES[scoreIndex] * Math.max(1, level + 1);
   score += gained;
   updateLevel();
   updateScoreboard();
