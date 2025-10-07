@@ -16,6 +16,21 @@ python -m http.server 8000
 
 Then open <http://localhost:8000> in your browser to start playing.
 
+## Testing
+
+Before merging any changes, smoke test the game in a desktop browser:
+
+1. Start the local development server as described above.
+2. Press **Start** and confirm the active piece begins falling.
+3. Verify keyboard input (left/right, rotate, soft drop, hard drop, hold)
+   behaves as expected.
+4. Clear at least one line to ensure scoring, line, and level counters
+   update.
+5. Pause and resume the game, then trigger a game over to confirm the
+   reset flow works.
+
+If any of these actions fail, fix the issue before merging.
+
 ## Features
 
 - Classic 10×20 Tetris playfield rendered to a `<canvas>`
@@ -24,5 +39,7 @@ Then open <http://localhost:8000> in your browser to start playing.
   pause/reset actions
 - Score, line, and level tracking with increasing fall speed as you
   progress
+- Ambient background soundtrack, responsive layout scaling, and flashing
+  line-clear celebrations when you score
 
 Have fun stacking!

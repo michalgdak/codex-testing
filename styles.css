@@ -21,11 +21,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: clamp(16px, 4vw, 32px);
 }
 
 .app {
-  width: min(1100px, 100%);
+  width: min(780px, 96vw);
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -75,8 +75,10 @@ body {
 }
 
 .status .value {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  display: inline-block;
 }
 
 .controls {
@@ -111,13 +113,15 @@ button:not(:disabled):hover {
 
 .playfield {
   display: grid;
-  grid-template-columns: minmax(280px, 1fr) minmax(220px, 280px);
+  grid-template-columns: minmax(240px, 1fr) minmax(180px, 240px);
   gap: 18px;
+  align-items: flex-start;
 }
 
 #board {
-  width: 100%;
+  width: min(100%, 300px);
   height: auto;
+  margin: 0 auto;
   background: rgba(2, 6, 23, 0.75);
   border-radius: 14px;
   border: 2px solid rgba(56, 189, 248, 0.4);
@@ -127,6 +131,7 @@ button:not(:disabled):hover {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  max-width: 240px;
 }
 
 .panel {
@@ -179,6 +184,12 @@ canvas {
   display: block;
 }
 
+#next,
+#hold {
+  width: min(100%, 180px);
+  margin: 0 auto;
+}
+
 @media (max-width: 900px) {
   .playfield {
     grid-template-columns: 1fr;
@@ -191,7 +202,7 @@ canvas {
   }
 
   .panel {
-    width: min(220px, 100%);
+    width: min(210px, 100%);
   }
 }
 
@@ -201,11 +212,30 @@ canvas {
   }
 
   .app {
-    padding: 18px;
+    padding: 16px;
   }
 
   .controls {
     width: 100%;
     justify-content: center;
+  }
+}
+
+.value.pulse {
+  animation: pulse 0.5s ease;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    color: var(--text);
+  }
+  50% {
+    transform: scale(1.12);
+    color: var(--accent);
+  }
+  100% {
+    transform: scale(1);
+    color: var(--text);
   }
 }
