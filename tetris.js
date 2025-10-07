@@ -249,8 +249,10 @@ function finishLineClear() {
   const rows = [...clearingRows].sort((a, b) => b - a);
   rows.forEach((row) => {
     board.splice(row, 1);
-    board.unshift(Array(COLS).fill(null));
   });
+  for (let i = 0; i < rows.length; i++) {
+    board.unshift(Array(COLS).fill(null));
+  }
   isClearing = false;
   clearingRows = [];
   lineClearTimer = 0;

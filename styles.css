@@ -25,7 +25,7 @@ body {
 }
 
 .app {
-  width: min(780px, 96vw);
+  width: min(700px, 94vw);
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -113,13 +113,13 @@ button:not(:disabled):hover {
 
 .playfield {
   display: grid;
-  grid-template-columns: minmax(240px, 1fr) minmax(150px, 200px);
+  grid-template-columns: minmax(220px, 1fr) minmax(120px, 160px);
   gap: 18px;
   align-items: flex-start;
 }
 
 #board {
-  width: min(100%, 300px);
+  width: min(100%, 260px);
   height: auto;
   margin: 0 auto;
   background: rgba(2, 6, 23, 0.75);
@@ -131,7 +131,7 @@ button:not(:disabled):hover {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 200px;
+  max-width: 160px;
 }
 
 .panel {
@@ -186,7 +186,7 @@ canvas {
 
 #next,
 #hold {
-  width: min(100%, 150px);
+  width: min(100%, 120px);
   margin: 0 auto;
 }
 
